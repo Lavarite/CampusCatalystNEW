@@ -1,0 +1,75 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+}
+
+.ant-layout, .ant-layout-sider, .site-layout {
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.ant-layout-sider {
+    background: #001529;
+    box-shadow: 2px 0 6px rgba(0,0,0,0.2);
+}
+
+.logo {
+    height: 32px;
+    margin: 16px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+}
+
+.ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: #1890ff;
+}
+
+.site-layout-background {
+    padding: 0 16px;
+    background-color: #fff;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.content-area {
+    height: calc(100% - 16px);
+    overflow: auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.content-area::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-area::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.content-area::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+.content-area::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.widget-add-button {
+    position: fixed;
+    margin: 0;
+    right: 32px;
+    bottom: 32px;
+    z-index: 10;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.widget-add-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}

@@ -1,0 +1,104 @@
+.ScheduleWidget .ant-card {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    transition: box-shadow 0.3s;
+}
+
+.ScheduleWidget .ant-card:hover {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.ScheduleWidget .ant-card-head {
+    background-color: #f0f2f5;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.ScheduleWidget .DragHandle {
+    display: inline-block;
+    cursor: move;
+    margin-right: 16px;
+    color: #1890ff;
+}
+
+.ScheduleWidget .ant-card-extra {
+    display: flex;
+    align-items: center;
+}
+
+.ScheduleWidget .ant-btn {
+    border: none;
+    color: #1890ff;
+    background: transparent;
+}
+
+.ScheduleWidget .ant-btn:focus,
+.ScheduleWidget .ant-btn:hover {
+    color: #40a9ff;
+    background: transparent;
+}
+
+.ScheduleWidget .ant-btn:active {
+    color: #096dd9;
+}
+
+.ScheduleWidget .ant-card-body {
+    padding: 0;
+}
+
+.scrollable-list {
+    overflow-y: auto;
+    height: 100%;
+    transition: background 0.3s;
+}
+
+.scrollable-list::-webkit-scrollbar {
+    width: 8px;
+}
+
+.scrollable-list::-webkit-scrollbar-track {
+    background: #f0f2f5;
+    border-radius: 4px;
+}
+
+.scrollable-list::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.scrollable-list:hover::-webkit-scrollbar-thumb {
+    background: #1890ff;
+}
+
+.ScheduleWidget .ant-list-item {
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.ScheduleWidget {
+    user-select: none;
+}
+
+.ScheduleWidget .ant-list-item-meta-title,
+.ScheduleWidget .ant-list-item-meta-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ScheduleWidget .CloseOutlined {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #ff4d4f;
+    font-size: 16px;
+    opacity: 0.5;
+    transition: transform 0.3s ease-in-out, opacity 0.3s;
+}
+
+.ScheduleWidget .CloseOutlined:hover {
+    transform: scale(1.2);
+    opacity: 1;
+}
