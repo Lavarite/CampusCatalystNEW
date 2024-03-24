@@ -4,7 +4,7 @@ import moment from 'moment';
 import {CloseOutlined, LeftOutlined, RightOutlined} from '@ant-design/icons';
 import './ScheduleWidget.css';
 
-const GradesWidget = ({ role, userId, maxHeight, closeFunc, id }) => {
+const ScheduleWidget = ({ token, maxHeight, closeFunc, id, role, userId }) => {
     const [schedule, setSchedule] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedDate, setSelectedDate] = useState(moment());
@@ -13,7 +13,7 @@ const GradesWidget = ({ role, userId, maxHeight, closeFunc, id }) => {
         const fetchSchedule = async () => {
             setLoading(true);
             try {
-                const response = await fetch(`http://localhost:3001/api/lessons?role=${role}&id=${userId}&day=${selectedDate.date()}&month=${selectedDate.month() + 1}&year=${selectedDate.year()}`);
+                const response = await fetch(`http://localhost:3001/api/lessons?token=${token}&day=${selectedDate.date()}&month=${selectedDate.month() + 1}&year=${selectedDate.year()}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -75,4 +75,4 @@ const GradesWidget = ({ role, userId, maxHeight, closeFunc, id }) => {
     );
 };
 
-export default GradesWidget;
+export default ScheduleWidget;
