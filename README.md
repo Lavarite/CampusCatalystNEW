@@ -12,4 +12,3 @@ Features of this version:
  - Timetables
  - To Do list
  - Class timeline
- - Assignment upload & Deadlines
