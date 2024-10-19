@@ -25,7 +25,7 @@ function LoginPage() {
             if (response.ok) {
                 console.log('Login successful:', data);
                 localStorage.setItem('token', data.token);
-                navigate('/dashboard');
+                navigate('/u/dashboard');
             } else {
                 console.error('Login failed:', data.message);
                 message.error(data.message || 'Login failed, please try again.');
@@ -61,7 +61,7 @@ function LoginPage() {
                 localStorage.setItem('token', data.token);
                 setLoading(false);
                 if (localStorage.getItem('token') === data.token) {
-                    navigate('/dashboard');
+                    navigate('/u/dashboard');
                 } else {
                     console.error('Token verification failed.');
                     message.error('An error occurred. Please try again.');

@@ -8,6 +8,7 @@ const useAuth = (allowedRoles) => {
     const [isLoading, setIsLoading] = useState(true);
     const [userId, setUserId] = useState(null);
     const [userRole, setUserRole] = useState(null);
+    const [token, setUserToken] = useState(null);
 
     useEffect(() => {
         const verifyToken = async () => {
@@ -26,6 +27,7 @@ const useAuth = (allowedRoles) => {
                 setIsAuthorized(allowedRoles.includes(role));
                 setUserId(id);
                 setUserRole(role);
+                setUserToken(token);
             } catch (error) {
                 console.error('Error verifying token:', error);
                 setIsAuthorized(false);
@@ -36,17 +38,17 @@ const useAuth = (allowedRoles) => {
         verifyToken();
     }, [allowedRoles]);
 
-    return { isAuthorized, isLoading, userId, userRole };
+    return { isAuthorized, isLoading, userId, userRole, token };
 };
 
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
     const location = useLocation();
-    const { isAuthorized, isLoading, userId, userRole } = useAuth(allowedRoles);
+    const { isAuthorized, isLoading, userId, userRole, token } = useAuth(allowedRoles);
 
     if (isLoading) {
         return <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <Spin size="large" />
+            <Spin size="large" style={{top: '50%', left: '50%'}}/>
         </div>;
     }
 
@@ -56,7 +58,7 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
 
     return React.Children.map(children, child => {
         if (React.isValidElement(child)) {
-            return React.cloneElement(child, { userid: userId, role: userRole });
+            return React.cloneElement(child, { userid: userId, role: userRole, token: token });
         }
         return child;
     });
